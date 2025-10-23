@@ -10,7 +10,7 @@ const app = express();
 //app.use(bodyParser.urlencoded()); // x-www-form-urlencoded <form>
 app.use (bodyParser.json()); //application/json
 
-app.use(cors({ origin: true, credentials: true }));
+app.use(cors({ origin: true, credentials: true, allowedHeaders: 'Content-Type, Authorization' }));
 
 // app.use ((req, res ,next)=>{
 //     res.setHeader('Access-Control-Allow-Origin', '*');
