@@ -3,13 +3,13 @@ exports.identifier = (req, res, next) => {
     let token;
 
     if (req.headers.Authorization != undefined || req.headers.Authorization != '') {
-        token = req.headers.Authorization;
+        token = req.headers.authorization;
     }
     else{
         token = req.cookies['Authorization'];
     }
     if (!token) {
-        return res.status(403).json({ success: false, message: 'Unauthorized' });
+        return res.status(403).json({ success: false, message: 'unauthorized' });
     }
     try{
     const userToken =  token.split(' ')[1];
@@ -20,7 +20,7 @@ exports.identifier = (req, res, next) => {
     }
     }
     catch{
-        throw new Error('error in the token');
+        throw new Error(`error in the token`);
     }
   };
 
