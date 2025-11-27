@@ -34,7 +34,7 @@ exports.createMessage = (req,res,next) =>{
     })
     const sendData = {
             email: 'aryan.mnitj@gmail.com',
-            subject: 'New message from your porfolio website',
+            subject: 'New message from your portfolio website',
             body: `You have received a new message from ${name} (${email}):\n\n${message}`
           };
 
